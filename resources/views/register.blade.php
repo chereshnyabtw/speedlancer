@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('page_name', 'Регистрация')
+@section('page_name', __('site_names.registration'))
 
 @section('content')
 <form method="POST" action="/register">
