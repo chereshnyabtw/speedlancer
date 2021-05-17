@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorizationController;
+use App\Http\Middleware\OnlyAnonnymous;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::middleware([OnlyAnonnymous::class])->group(function() {
+    Route::get('/register', function () {
+        return view('register');
+    })->name('register');
+    Route::post('/register', [AuthorizationController::class, 'register']);
+
+    Route::get('/login', function () {
+        return view('login');
+    })->name('login');
+    Route::post('/login', [AuthorizationController::class, 'login']);
+});
+
+Route::middleware('auth')->group(function() {
+    Route::get('/logout', [AuthorizationController::class, 'logOut']);
 });
