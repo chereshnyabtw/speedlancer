@@ -22,8 +22,6 @@ class AuthorizationController extends Controller
 
         if(Auth::login($user))
             return redirect(route('home'));
-
-        return redirect(route('register'))->withErrors(['Ошибка при создании пользователя.']);
     }
 
     public function login(Request $request)
@@ -36,7 +34,7 @@ class AuthorizationController extends Controller
         if(Auth::attempt($formFields))
             return redirect(route('home'));
 
-        return redirect(route('login'))->withErrors('Неверный логин или пароль.');
+        return redirect(route('login'))->withErrors([__('auth.failed')]);
     }
 
     public function logOut(Request $request)

@@ -15,29 +15,29 @@
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Домашняя страница</a>
+                            <a href="/" class="nav-link">{{__('site_names.home')}}</a>
                         </li>
                         @auth
                         <li class="nav-item">
-                            <a href="/profile" class="nav-link">Профиль</a>
+                            <a href="/profile" class="nav-link">{{__('site_names.profile')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/logout" class="nav-link">Выйти</a>
+                            <a href="/logout" class="nav-link">{{__('site_names.logout')}}</a>
                         </li>
                         @endauth
                         @guest
                         <li class="nav-item">
-                            <a href="/register" class="nav-link">Регистрация</a>
+                            <a href="/register" class="nav-link">{{__('site_names.registration')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/login" class="nav-link">Авторизация</a>
+                            <a href="/login" class="nav-link">{{__('site_names.authorize')}}</a>
                         </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container text-center">
+        <div class="container">
             @yield('content')
         </div>
     </body>
