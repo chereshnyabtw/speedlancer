@@ -12,3 +12,7 @@ set `APP_DEBUG=true`
 
 After that, we can start our test web server:
 `php artisan serve`
+
+
+## Deployment
+[Deployment guide](https://laravel.com/docs/8.x/deployment)
