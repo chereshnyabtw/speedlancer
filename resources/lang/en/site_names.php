@@ -15,5 +15,6 @@ return [
     'add work' => 'Add work',
     'title' => 'Title',
     'description' => 'Description',
-    'picture' => 'Picture'
+    'picture' => 'Picture',
+    'create_error' => 'Error when create user'
 ];

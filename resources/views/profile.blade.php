@@ -77,7 +77,6 @@
     <div class="col-md-6">
         <h1>{{__('site_names.works')}}</h1>
 
-
     <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-3" data-bs-ride="carousel">
         <div class="carousel-indicators">
         @foreach( $works as $work )

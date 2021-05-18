@@ -22,6 +22,8 @@ class AuthorizationController extends Controller
 
         if(Auth::login($user))
             return redirect(route('home'));
+        else
+            return redirect(route('register'))->withErrors([__('site_names.create_error')]);
     }
 
     public function login(Request $request)
